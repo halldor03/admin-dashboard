@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+.content {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "sidecontent header header"
+    "sidecontent projects announcements"
+    "sidecontent projects trending";
+}
+
+.header {
+  grid-area: header;
+  background-color: #ffffff;
+}
+
+.upperheader {
+  display: flex;
+  border: 1px black solid;
+}
+
+#profile_small {
+  height: 50px;
+  border-radius: 50%;
+}
+
+input {
+  appearance: none;
+  font-family: inherit;
+  font-size: inherit;
+  height: 2rem;
+  width: 15rem;
+  padding: 0.8rem;
+  outline: #ffffff 0.09rem solid;
+  background-color: #eeeeee;
+  border: 0px;
+  border-radius: 0.8rem;
+  margin: 0rem 0.25rem 2rem 0rem;
+  flex: 1;
+}
+
+input:focus {
+  background-color: #dddddd;
+}
+
+.name_small {
+  font-weight: 600;
+}
+
+.sidecontent {
+  grid-area: sidecontent;
+  background-color: blue;
+}
+
+.projects {
+  grid-area: projects;
+  background-color: green;
+}
+
+.announcements {
+  grid-area: announcements;
+  background-color: yellow;
+}
+
+.trending {
+  grid-area: trending;
+  background-color: gray;
+}
