@@ -12,6 +12,8 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* general grid overlay */
@@ -30,20 +32,17 @@
 .header {
   display: grid;
   align-self: center;
-  padding: 2rem 4rem;
+  padding: 1rem 2rem 1rem 2rem;
   grid-area: header;
   background-color: #ffffff;
   height: min-content;
 }
 
-.material-symbols-outlined {
-  cursor: pointer;
-}
-
 /* upper part of the header */
 .upperheader {
   display: grid;
-  grid-template-columns: min-content 1fr 1.5fr repeat(3, min-content);
+  grid-auto-flow: column;
+  grid-template-columns: min-content 4fr 1fr repeat(4, min-content);
 }
 
 .upperheader > * {
@@ -69,11 +68,14 @@ input:focus {
 
 #avatar_small {
   height: 50px;
+  width: 50px;
   border-radius: 50%;
 }
 
 .name_small {
   font-weight: bold;
+  font-size: 1.2rem;
+  grid-column: span 3;
 }
 
 /* lower part of the header */
@@ -83,12 +85,13 @@ input:focus {
 }
 
 .lowerheader > * {
-  margin: 1rem;
-  align-self: center;
+  margin: 0.5rem;
+  place-self: center;
 }
 
 #avatar_big {
   height: 100px;
+  width: 100px;
   border-radius: 50%;
 }
 
@@ -97,7 +100,7 @@ input:focus {
   font-weight: bold;
   align-self: center;
   justify-self: start;
-  margin-left: -1rem;
+  margin-left: 0.5rem;
 }
 
 .name_big > p {
@@ -115,29 +118,50 @@ input:focus {
   cursor: pointer;
   height: 3rem;
   font-weight: bold;
+  min-width: 7rem;
 }
 
 /* sidecontent elements*/
 .sidecontent {
+  display: grid;
+  grid-template-columns: 48px 5fr;
+  grid-template-rows: repeat(auto-fit, 3rem);
   grid-area: sidecontent;
-  padding: 1rem;
   background-color: #1992d4;
   color: #ffffff;
+  padding: 1rem;
 }
 
-.sidecontent_title {
+.sidecontent .material-symbols-outlined {
+  place-self: center;
+}
+
+.sidecontent a,
+span {
+  align-self: center;
+}
+
+.dashboard_title_text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-left: 1rem;
+}
+
+.dashboard_text {
   font-size: 1.5rem;
+  padding-left: 1rem;
 }
 
-.sidecontent > div {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  padding: 1rem 0 1rem 0;
+.dashboard_text:hover {
+  color: #d4d3d3;
 }
 
-.sidecontent span {
-  margin-right: 0.5rem;
+.sidecontent .material-symbols-outlined {
+  font-size: 2rem;
+}
+
+.sidecontent span:first-child {
+  font-size: 4rem;
 }
 
 /* main content: cards/projects*/
@@ -154,8 +178,8 @@ input:focus {
 .cards {
   margin-top: 1rem;
   display: grid;
-  gap: 1rem;
-  grid-template-rows: repeat(3, minmax(300px, 1fr));
+  gap: 2rem;
+  grid-template-rows: max-content;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
@@ -169,9 +193,14 @@ input:focus {
   box-shadow: 2px 2px 5px #999;
 }
 
-.cards .material-symbols-outlined {
+.cards .icons {
   align-self: end;
   justify-self: right;
+  display: flex;
+}
+
+.icons > a {
+  margin-left: 1rem;
 }
 
 .cards p {
@@ -182,7 +211,7 @@ input:focus {
 
 /* announcement section*/
 .announcements {
-  padding: 2rem;
+  padding: 2rem 2rem 2rem 0;
   background-color: #eeeeee;
   grid-area: announcements;
 }
@@ -201,14 +230,20 @@ input:focus {
   box-shadow: 2px 2px 5px #999;
 }
 
+.announcements_card p {
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+}
+
 .line {
   background-color: #999;
   height: 1px;
+  margin: 1rem 0 1rem 0;
 }
 
-/* tending section*/
+/* trending section*/
 .trending {
-  padding: 2rem;
+  padding: 2rem 2rem 2rem 0;
   background-color: #eeeeee;
   grid-area: trending;
 }
@@ -229,12 +264,34 @@ input:focus {
 
 .trending_card > div {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-auto-flow: column;
+  justify-content: left;
+  align-items: center;
 }
 
-.first_trending img {
-  height: 50px;
+.first_trending,
+.second_trending,
+.third_trending {
+  margin-bottom: 1rem;
+}
+
+.trending img {
+  height: 75px;
+  width: 75px;
   border-radius: 50%;
+}
+
+.trending_card span {
+  padding-left: 1.5rem;
+}
+
+span[class*="trending_info"] {
+  font-weight: bold;
+}
+
+[class*="trending_info"] p {
+  font-weight: normal;
+  color: rgb(162, 162, 162);
 }
 
 .footer {
@@ -243,5 +300,5 @@ input:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 2rem;
 }
