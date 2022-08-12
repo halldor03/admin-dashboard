@@ -142,13 +142,13 @@ span {
 }
 
 .dashboard_title_text {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: bold;
   padding-left: 1rem;
 }
 
 .dashboard_text {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   padding-left: 1rem;
 }
 
@@ -157,11 +157,11 @@ span {
 }
 
 .sidecontent .material-symbols-outlined {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .sidecontent span:first-child {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 /* main content: cards/projects*/
