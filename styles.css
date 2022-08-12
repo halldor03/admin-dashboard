@@ -21,7 +21,7 @@
   height: 100vh;
   display: grid;
   grid-template-rows: min-content;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 3fr 1.5fr;
   grid-template-areas:
     "sidecontent header header"
     "sidecontent projects announcements"
@@ -178,19 +178,22 @@ span {
 .cards {
   margin-top: 1rem;
   display: grid;
-  gap: 2rem;
-  grid-template-rows: max-content;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-auto-rows: minmax(min-content, 16rem);
 }
 
 .cards > div {
   background-color: #ffffff;
   border-radius: 1rem;
   display: grid;
-  grid-template-rows: 3fr 1fr;
   padding: 2rem;
   text-align: justify;
   box-shadow: 2px 2px 5px #999;
+}
+
+.cards span {
+  align-self: flex-start;
 }
 
 .cards .icons {
